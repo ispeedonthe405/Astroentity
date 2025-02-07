@@ -2,6 +2,7 @@
 using Avalonia.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -21,31 +22,31 @@ namespace Astroentity.ViewModels
 		[RelayCommand]
 		void NavigateHome()
 		{
-            Navigate("home");	
+            Navigate(typeof(V_Home));	
 		}
 
         [RelayCommand]
         void NavigateGalaxies()
         {
-            Navigate("galaxies");
+            Navigate(typeof(V_Galaxies));
         }
 
         [RelayCommand]
         void NavigateNebulae()
         {
-            Navigate("nebulae");
+            Navigate(typeof(V_Nebulae));
         }
 
         [RelayCommand]
         void NavigateStars()
         {
-            Navigate("stars");
+            Navigate(typeof(V_Stars));
         }
 
         [RelayCommand]
         void NavigateSettings()
         {
-            Navigate("settings");
+            Navigate(typeof(V_Settings));
         }
 
         #endregion Commands
@@ -63,7 +64,7 @@ namespace Astroentity.ViewModels
 		UserControl? activeContent;
 
 		[ObservableProperty]
-		Dictionary<string, UserControl> views = [];
+		Dictionary<Type, UserControl> views = [];
 
 		#endregion Properties
 		/////////////////////////////////////////////////////////
@@ -71,18 +72,17 @@ namespace Astroentity.ViewModels
 
         public VM_MainWindow()
         {
-            views.Add("home", new V_Home());
-            views.Add("galaxies", new V_Galaxies());
-            views.Add("nebulae", new V_Nebulae());
-            views.Add("stars", new V_Stars());
-            views.Add("settings", new V_Settings());
+            views.Add(typeof(V_Home), new V_Home());
+            views.Add(typeof(V_Galaxies), new V_Galaxies());
+            views.Add(typeof(V_Nebulae), new V_Nebulae());
+            views.Add(typeof(V_Stars), new V_Stars());
+            views.Add(typeof(V_Settings), new V_Settings());
 
             NavigateHome();
         }
 
-        private void Navigate(string key)
+        private void Navigate(Type key)
         {
-            key = key.ToLower();
             if (Views.ContainsKey(key))
             {
                 ActiveContent = Views[key];
