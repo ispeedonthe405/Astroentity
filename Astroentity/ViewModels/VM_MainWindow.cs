@@ -83,9 +83,9 @@ namespace Astroentity.ViewModels
 
         private void Navigate(Type key)
         {
-            if (Views.ContainsKey(key))
+            if (Views.TryGetValue(key, out UserControl? value))
             {
-                ActiveContent = Views[key];
+                ActiveContent = value;
             }
             else
             {
