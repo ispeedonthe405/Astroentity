@@ -1,0 +1,150 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Astroentity.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:sym="using:sbavalonia.symbols"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Astroentity.Views.MainWindow"
+        x:DataType="vm:VM_MainWindow"
+        Icon="/Assets/astroentity.ico"
+        Title="Astroentity"
+		ExtendClientAreaChromeHints="PreferSystemChrome"
+		ExtendClientAreaToDecorationsHint="True"
+		ShowInTaskbar="True"
+		Background="Transparent">
+
+    <Design.DataContext>
+		<vm:VM_MainWindow/>
+    </Design.DataContext>
+
+	<Window.Styles>
+		<StyleInclude Source="/Styles/StyleDefaults.axaml" />
+	</Window.Styles>
+
+	<Grid x:Name="MainLayout">
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="20"/>
+		</Grid.RowDefinitions>
+
+		<!--Custome titlebar-->
+		<Border Grid.Row="0" Grid.RowSpan="3" CornerRadius="20,20,10,10" IsHitTestVisible="False"
+				Background="{DynamicResource SystemChromeHighColor}"
+				BorderBrush="LightGray"
+				BorderThickness="3">
+		</Border>
+
+		<StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Bottom" Spacing="10" Margin="10,0,10,0">
+			<Image Source="avares://Astroentity/Assets/telescope64.png" Width="32" Height="32"/>
+			<TextBlock FontSize="16" FontWeight="DemiBold" Text="Astroentity"/>
+		</StackPanel>
+
+
+		<SplitView x:Name="splitview" ZIndex="2" Margin="3,0,3,0"
+				   Grid.Row="1"
+				   IsPaneOpen="{Binding IsPaneOpen}"
+				   DisplayMode="CompactInline"
+				   CompactPaneLength="44"
+				   OpenPaneLength="225"
+				   Background="{DynamicResource SystemChromeMediumColor}"
+				   PaneBackground="{DynamicResource SystemChromeHighColor}">
+
+			<SplitView.Pane>
+
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="30"/>
+						<RowDefinition Height="30"/>
+						<RowDefinition Height="30"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="10"/>
+					</Grid.RowDefinitions>
+
+
+					<Button Grid.Row="1" Width="30" Height="30" Margin="5"
+							Command="{Binding TogglePaneCommand}"
+							ToolTip.Tip="Toggle menu open or closed">
+						<Button.Content>
+							<sym:Symbol SymbolName="menu"/>
+						</Button.Content>
+					</Button>
+
+					<StackPanel x:Name="NavPanel" Grid.Row="3" VerticalAlignment="Top" Margin="5,0,10,0"
+								Orientation="Vertical" Spacing="10"
+								IsVisible="{Binding IsPaneOpen}">
+
+						<StackPanel.Styles>
+							<Style Selector="Button">
+								<Setter Property="HorizontalAlignment" Value="Stretch"/>
+								<Setter Property="HorizontalContentAlignment" Value="Left"/>
+							</Style>
+						</StackPanel.Styles>
+
+						<Button Command="{Binding NavigateHomeCommand}"
+								ToolTip.Tip="Navigate to Home">
+							<Button.Content>
+								<StackPanel Orientation="Horizontal" Spacing="5">
+									<sym:Symbol SymbolName="add"/>
+									<TextBlock Text="Home"/>
+								</StackPanel>
+							</Button.Content>
+						</Button>
+						
+						<Button Command="{Binding NavigateStarsCommand}"
+								ToolTip.Tip="Navigate to Stars">
+							<Button.Content>
+								<StackPanel Orientation="Horizontal" Spacing="5">
+									<sym:Symbol SymbolName="add"/>
+									<TextBlock Text="Stars"/>
+								</StackPanel>
+							</Button.Content>
+						</Button>
+
+						<Button Command="{Binding NavigateNebulaeCommand}"
+								ToolTip.Tip="Navigate to Nebulae">
+							<Button.Content>
+								<StackPanel Orientation="Horizontal" Spacing="5">
+									<sym:Symbol SymbolName="add"/>
+									<TextBlock Text="Nebulae"/>
+								</StackPanel>
+							</Button.Content>
+						</Button>
+
+						<Button Command="{Binding NavigateGalaxiesCommand}"
+								ToolTip.Tip="Navigate to Galaxies">
+							<Button.Content>
+								<StackPanel Orientation="Horizontal" Spacing="5">
+									<sym:Symbol SymbolName="add"/>
+									<TextBlock Text="Galaxies"/>
+								</StackPanel>
+							</Button.Content>
+						</Button>
+
+						<Button Command="{Binding NavigateSettingsCommand}"
+								ToolTip.Tip="Navigate to Settings">
+							<Button.Content>
+								<StackPanel Orientation="Horizontal" Spacing="5">
+									<sym:Symbol SymbolName="add"/>
+									<TextBlock Text="Settings"/>
+								</StackPanel>
+							</Button.Content>
+						</Button>
+						
+					</StackPanel>
+
+				</Grid>
+				
+			</SplitView.Pane>
+
+			<SplitView.Content>
+				<UserControl x:Name="ContentFrame" Content="{Binding ActiveContent}"/>
+			</SplitView.Content>
+			
+		</SplitView>
+		
+	</Grid>
+
+</Window>
