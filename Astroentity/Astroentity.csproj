@@ -49,4 +49,8 @@
       <HintPath>..\..\libs\sbdotnet.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
 </Project>

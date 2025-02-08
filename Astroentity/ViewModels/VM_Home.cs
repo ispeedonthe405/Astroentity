@@ -14,7 +14,7 @@ namespace Astroentity.ViewModels
         string title = App.AppTitle;
 
         [ObservableProperty]
-        string description1 = "A simple demonstration of EntityFramework with SQLite, the MVVM pattern, and Avalonia";
+        string description1 = string.Empty;
 
         [ObservableProperty]
         string description2 = "";
@@ -30,6 +30,18 @@ namespace Astroentity.ViewModels
         {
             Application.Current!.ActualThemeVariantChanged += App_ActualThemeVariantChanged;
             ReloadImage();
+
+            description1 = "This application serves as a simple demo of " +
+                            "Entity Framework, SQLite, and Avalonia. It's " +
+                            "also a bit of a vanity showcase for my sbavalonia " +
+                            "and sbdotnet libs.";
+
+            description2 = "In the Navigation Pane on the left you can " +
+                            "view and interact with various tables from " +
+                            "the SQLite database. Because this is meant to " +
+                            "be a quick demo, the tables feature only a few " +
+                            "entries. On the plus side, you do get to make up " +
+                            "new stars, nebulae, and galaxies.";
         }
 
         private void App_ActualThemeVariantChanged(object? sender, System.EventArgs e)

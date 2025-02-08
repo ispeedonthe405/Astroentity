@@ -3,6 +3,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:vm="using:Astroentity.ViewModels"
+			 xmlns:sym="using:sbavalonia.symbols"
              x:Class="Astroentity.V_Nebulae">
 
 	<UserControl.Styles>
@@ -18,7 +20,7 @@
 		</Grid.RowDefinitions>
 
 		<StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="15">
-			<Image Source="/Assets/nebula.png" Width="48" Height="48"/>
+			<sym:Symbol SymbolName="cloud" Width="48" Height="48"/>
 			<TextBlock FontSize="32" Text="NEBULAE"/>
 		</StackPanel>
 

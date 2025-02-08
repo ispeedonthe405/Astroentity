@@ -87,7 +87,7 @@
 								ToolTip.Tip="Navigate to Home">
 							<Button.Content>
 								<StackPanel Orientation="Horizontal" Spacing="5">
-									<sym:Symbol SymbolName="add"/>
+									<sym:Symbol SymbolName="home"/>
 									<TextBlock Text="Home"/>
 								</StackPanel>
 							</Button.Content>
@@ -97,7 +97,7 @@
 								ToolTip.Tip="Navigate to Stars">
 							<Button.Content>
 								<StackPanel Orientation="Horizontal" Spacing="5">
-									<sym:Symbol SymbolName="add"/>
+									<sym:Symbol SymbolName="star"/>
 									<TextBlock Text="Stars"/>
 								</StackPanel>
 							</Button.Content>
@@ -107,7 +107,7 @@
 								ToolTip.Tip="Navigate to Nebulae">
 							<Button.Content>
 								<StackPanel Orientation="Horizontal" Spacing="5">
-									<sym:Symbol SymbolName="add"/>
+									<sym:Symbol SymbolName="cloud"/>
 									<TextBlock Text="Nebulae"/>
 								</StackPanel>
 							</Button.Content>
@@ -117,7 +117,7 @@
 								ToolTip.Tip="Navigate to Galaxies">
 							<Button.Content>
 								<StackPanel Orientation="Horizontal" Spacing="5">
-									<sym:Symbol SymbolName="add"/>
+									<sym:Symbol SymbolName="orbit"/>
 									<TextBlock Text="Galaxies"/>
 								</StackPanel>
 							</Button.Content>
@@ -127,7 +127,7 @@
 								ToolTip.Tip="Navigate to Settings">
 							<Button.Content>
 								<StackPanel Orientation="Horizontal" Spacing="5">
-									<sym:Symbol SymbolName="add"/>
+									<sym:Symbol SymbolName="settings"/>
 									<TextBlock Text="Settings"/>
 								</StackPanel>
 							</Button.Content>
