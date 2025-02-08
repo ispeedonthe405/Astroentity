@@ -3,6 +3,28 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:sym="using:sbavalonia.symbols"
              x:Class="Astroentity.V_Settings">
-  Settings
+
+	<UserControl.Styles>
+		<StyleInclude Source="/Styles/StyleDefaults.axaml"/>
+	</UserControl.Styles>
+
+	<Grid>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="48"/>
+			<RowDefinition Height="6"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="15">
+			<sym:Symbol SymbolName="settings" Width="48" Height="48"/>
+			<TextBlock FontSize="32" Text="SETTINGS"/>
+		</StackPanel>
+
+		<Border Grid.Row="1" Height="3" VerticalAlignment="Center" Background="{DynamicResource SystemChromeHighColor}"/>
+
+	</Grid>
+	
 </UserControl>

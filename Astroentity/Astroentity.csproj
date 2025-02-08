@@ -13,6 +13,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <AvaloniaResource Remove="Assets\telescope64D.png" />
+    <AvaloniaResource Remove="Assets\telescope64Dark.png" />
+    <AvaloniaResource Remove="Assets\telescope64Light.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\telescope64Dark.png" />
+    <EmbeddedResource Include="Assets\telescope64Light.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.2.3" />
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.3" />
     <PackageReference Include="Avalonia.Desktop" Version="11.2.3" />
@@ -28,6 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="sbavalonia.media">
+      <HintPath>..\..\libs\sbavalonia.media.dll</HintPath>
+    </Reference>
     <Reference Include="sbavalonia.symbols">
       <HintPath>..\..\libs\sbavalonia.symbols.dll</HintPath>
     </Reference>

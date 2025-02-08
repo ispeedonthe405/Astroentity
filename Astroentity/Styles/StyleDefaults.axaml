@@ -44,6 +44,7 @@
 		<Setter Property="IsTabStop" Value="False"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="MinHeight" Value="24"/>
 		<Setter Property="Height" Value="24"/>
 		<Setter Property="Padding" Value="5,2,5,0"/>

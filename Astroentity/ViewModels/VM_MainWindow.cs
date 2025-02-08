@@ -58,6 +58,9 @@ namespace Astroentity.ViewModels
         #region Properties
 
         [ObservableProperty]
+        string appTitle = string.Empty;
+
+        [ObservableProperty]
 		bool isPaneOpen = true;
 
 		[ObservableProperty]
@@ -72,11 +75,13 @@ namespace Astroentity.ViewModels
 
         public VM_MainWindow()
         {
-            views.Add(typeof(V_Home), new V_Home());
-            views.Add(typeof(V_Galaxies), new V_Galaxies());
-            views.Add(typeof(V_Nebulae), new V_Nebulae());
-            views.Add(typeof(V_Stars), new V_Stars());
-            views.Add(typeof(V_Settings), new V_Settings());
+            AppTitle = $"{App.AppTitle} v{App.AppVersion}";
+
+            views.Add(typeof(V_Home), new V_Home() { DataContext = new VM_Home() });
+            views.Add(typeof(V_Galaxies), new V_Galaxies() { DataContext = new VM_Galaxies() });
+            views.Add(typeof(V_Nebulae), new V_Nebulae() { DataContext = new VM_Nebulae() });
+            views.Add(typeof(V_Stars), new V_Stars() { DataContext = new VM_Stars() });
+            views.Add(typeof(V_Settings), new V_Settings() { DataContext = new VM_Settings() });
 
             NavigateHome();
         }

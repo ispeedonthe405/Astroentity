@@ -39,7 +39,7 @@
 
 		<StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Bottom" Spacing="10" Margin="10,0,10,0">
 			<Image Source="avares://Astroentity/Assets/telescope64.png" Width="32" Height="32"/>
-			<TextBlock FontSize="16" FontWeight="DemiBold" Text="Astroentity"/>
+			<TextBlock FontSize="16" FontWeight="DemiBold" Text="{Binding AppTitle}"/>
 		</StackPanel>
 
 
