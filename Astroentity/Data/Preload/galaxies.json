@@ -1,0 +1,14 @@
+[
+  {
+    "ID": 1,
+    "Name": "Milky Way",
+    "Description": "You are here",
+    "Distance": 0
+  },
+  {
+    "ID": 2,
+    "Name": "Andromeda",
+    "Description": "The closest major galaxy to our own",
+    "Distance": 2537000
+  }
+]

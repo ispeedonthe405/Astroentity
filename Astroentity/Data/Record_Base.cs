@@ -8,8 +8,14 @@ namespace Astroentity.Data
 		/////////////////////////////////////////////////////////
 		#region Properties
 
-		[ObservableProperty, Key]
-		public int iD;
+		private int _ID;
+
+		[Key]
+		public int ID
+		{
+			get => _ID;
+			set => SetProperty(ref _ID, value, nameof(ID));
+		}
 
 		#endregion Properties
 		/////////////////////////////////////////////////////////

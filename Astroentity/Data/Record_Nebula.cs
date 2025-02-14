@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Astroentity.Data
 {
+    [Table("Nebulae")]
     internal partial class Record_Nebula : Record_Base
     {
         [ObservableProperty]

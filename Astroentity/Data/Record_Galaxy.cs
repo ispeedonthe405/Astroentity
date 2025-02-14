@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Astroentity.Data
 {
+    [Table("Galaxies")]
     internal partial class Record_Galaxy : Record_Base
     {
         [ObservableProperty]

@@ -1,0 +1,10 @@
+[
+  {
+    "ID": 1,
+    "Name": "Sol",
+    "Description": "Home. You are here.",
+    "Distance": 0,
+    "StellarClass": "G2",
+    "StarSystem": "Solar"
+  }
+]

@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Astroentity.Data
 {
+    [Table("Stars")]
     internal partial class Record_Star : Record_Base
     {
         [ObservableProperty]
@@ -15,5 +17,8 @@ namespace Astroentity.Data
 
         [ObservableProperty]
         public string stellarClass = string.Empty;
+
+        [ObservableProperty]
+        public string starSystem = string.Empty;
     }
 }
