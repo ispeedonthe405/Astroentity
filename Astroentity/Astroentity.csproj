@@ -19,8 +19,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Data\Preload\galaxies.json" />
+    <None Remove="Data\Preload\nebulae.json" />
+    <None Remove="Data\Preload\stars.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="Assets\telescope64Dark.png" />
     <EmbeddedResource Include="Assets\telescope64Light.png" />
+    <EmbeddedResource Include="Data\Preload\galaxies.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Preload\nebulae.json" />
+    <EmbeddedResource Include="Data\Preload\stars.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +47,10 @@
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
