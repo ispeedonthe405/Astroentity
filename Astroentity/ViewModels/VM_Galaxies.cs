@@ -1,21 +1,21 @@
 ﻿using Astroentity.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Astroentity.ViewModels
 {
     internal partial class VM_Galaxies : ViewModelBase
     {
         [ObservableProperty]
-        DataContext dB = new();
-
-        [ObservableProperty]
-        Microsoft.EntityFrameworkCore.ChangeTracking.LocalView<Data.Record_Galaxy>? dataView;
+        List<Record_Galaxy>? data = [];
 
         public VM_Galaxies()
         {
-            DB.Galaxies.Load();
-            DataView = DB.Galaxies.Local;
+            using Data.DataContext db = new();
+            db.Galaxies.Load();
+            Data = db.Galaxies.Local.ToList();
         }
     }
 }
