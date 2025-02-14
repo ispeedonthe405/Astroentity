@@ -52,6 +52,12 @@
 				   Background="{DynamicResource SystemChromeMediumColor}"
 				   PaneBackground="{DynamicResource SystemChromeHighColor}">
 
+			<SplitView.Styles>
+				<Style Selector="Button">
+					<Setter Property="Height" Value="30"/>
+				</Style>
+			</SplitView.Styles>
+
 			<SplitView.Pane>
 
 				<Grid>

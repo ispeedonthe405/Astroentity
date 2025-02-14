@@ -31,17 +31,14 @@ namespace Astroentity.ViewModels
             Application.Current!.ActualThemeVariantChanged += App_ActualThemeVariantChanged;
             ReloadImage();
 
-            description1 = "This application serves as a simple demo of " +
+            description1 = $"This application serves as a simple demo of " +
                             "Entity Framework, SQLite, and Avalonia. It's " +
-                            "also a bit of a vanity showcase for my sbavalonia " +
-                            "and sbdotnet libs.";
-
-            description2 = "In the Navigation Pane on the left you can " +
+                            "also a bit of a showcase for my sbavalonia " +
+                            "and sbdotnet libs. \n\n" +
+                            "In the Navigation Pane on the left you can " +
                             "view and interact with various tables from " +
                             "the SQLite database. Because this is meant to " +
-                            "be a quick demo, the tables feature only a few " +
-                            "entries. On the plus side, you do get to make up " +
-                            "new stars, nebulae, and galaxies.";
+                            "be a quick demo, the tables feature only a few entities.";
         }
 
         private void App_ActualThemeVariantChanged(object? sender, System.EventArgs e)
