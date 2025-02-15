@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.ObjectModel;
 
 namespace Astroentity.Data
@@ -32,17 +33,31 @@ namespace Astroentity.Data
             if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove &&
                 e.OldItems is not null)
             {
-                using DataContext dc = new();
-                dc.RemoveRange(e.OldItems);
-                dc.SaveChanges();
+                try
+                {
+                    using DataContext dc = new();
+                    dc.RemoveRange(e.OldItems);
+                    dc.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    sbdotnet.Logger.Error(ex);
+                }                
             }
 
             else if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add &&
                      e.NewItems is not null)
             {
-                using DataContext dc = new();
-                dc.AddRange(e.NewItems);
-                dc.SaveChanges();
+                try
+                {
+                    using DataContext dc = new();
+                    dc.AddRange(e.NewItems);
+                    dc.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    sbdotnet.Logger.Error(ex);
+                }
             }
         }
 
@@ -53,11 +68,18 @@ namespace Astroentity.Data
 
         protected virtual void Record_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (sender is not null)
+            try
             {
-                using DataContext dc = new();
-                dc.Update(sender);
-                dc.SaveChanges();
+                if (sender is not null)
+                {
+                    using DataContext dc = new();
+                    dc.Update(sender);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                sbdotnet.Logger.Error(ex);
             }
         }
     }
