@@ -15,7 +15,7 @@ namespace Astroentity.Data
             Dataset = new ObservableCollection<T>(localView);
             Dataset.CollectionChanged += Dataset_CollectionChanged;
 
-            foreach (var record in dataset!)
+            foreach (var record in Dataset)
             {
                 record.PropertyChanging += Record_PropertyChanging;
                 record.PropertyChanged += Record_PropertyChanged;
