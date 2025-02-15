@@ -23,11 +23,6 @@ namespace Astroentity.Data
             }
         }
 
-        private void RefreshDataset()
-        {
-            using DataContext dc = new();
-        }
-
         protected virtual void Dataset_CollectionChanged(object? sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove &&
