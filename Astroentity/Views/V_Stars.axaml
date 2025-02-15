@@ -28,7 +28,14 @@
 
 		<Border Grid.Row="1" Height="3" VerticalAlignment="Center" Background="{DynamicResource SystemChromeHighColor}"/>
 
-		<DataGrid Grid.Row="3" ItemsSource="{Binding Data}"/>
+		<DataGrid Grid.Row="3" AutoGenerateColumns="False" ItemsSource="{Binding Tracker.Dataset}">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+				<DataGridTextColumn Header="Star System" Binding="{Binding StarSystem}"/>
+				<DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+				<DataGridTextColumn Header="Distance" Binding="{Binding Distance}"/>
+			</DataGrid.Columns>
+		</DataGrid>
 		
 	</Grid>
 	

@@ -1,20 +1,19 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using Astroentity.Data;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Astroentity.ViewModels
 {
     internal partial class VM_Nebulae : ViewModelBase
     {
         [ObservableProperty]
-        List<Data.Record_Nebula>? data;
+        PersistentChangeTracker<Record_Nebula>? tracker;
 
         public VM_Nebulae()
         {
             using Data.DataContext db = new();
             db.Nebulae.Load();
-            Data = db.Nebulae.Local.ToList();
+            Tracker = new(db.Nebulae.Local);
         }
     }
 }
